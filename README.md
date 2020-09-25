@@ -1,0 +1,2 @@
+#django_HumanResourceManagement Project
+BASED on python

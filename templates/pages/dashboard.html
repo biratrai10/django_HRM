@@ -1,0 +1,19 @@
+{% extends 'master/master.html' %}
+
+ {% block 'sidebar' %}
+  {% include 'component/sidebar.html' %}
+ {% endblock %}
+
+ {% block 'nav' %}
+  {% include 'component/nav.html' %}
+ {% endblock %}
+
+ {% block 'footer' %}
+{% include 'component/footer.html' %}
+ {% endblock %}
+
+{% block 'body' %}
+{% include 'component/message.html' %}
+<h1>Dashboard Here</h1>
+{% endblock %}
+

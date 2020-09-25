@@ -1,0 +1,26 @@
+{% extends 'master/master.html' %}
+
+ {% block 'sidebar' %}
+  {% include 'component/sidebar.html' %}
+ {% endblock %}
+
+ {% block 'nav' %}
+  {% include 'component/nav.html' %}
+ {% endblock %}
+
+ {% block 'footer' %}
+{% include 'component/footer.html' %}
+ {% endblock %}
+
+{% block 'body' %}
+
+
+<h3>Edit</h3>
+    <form method="post" enctype="multipart/form-data">
+        {{form.as_p}}
+
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Edit Done</button>
+    </form>
+
+{% endblock %}

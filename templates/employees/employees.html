@@ -1,0 +1,57 @@
+
+{% extends 'master/master.html' %}
+
+ {% block 'sidebar' %}
+  {% include 'component/sidebar.html' %}
+ {% endblock %}
+
+ {% block 'nav' %}
+  {% include 'component/nav.html' %}
+ {% endblock %}
+
+ {% block 'footer' %}
+{% include 'component/footer.html' %}
+ {% endblock %}
+
+{% block 'body' %}
+<h1>View Employee</h1>
+
+<table border="1px">
+    <thead>
+    <th>Name</th>
+        <th>Email</th>
+    <th>Address</th>
+    <th>Contact No</th>
+<!--    <th>Image</th>-->
+        <th>Status</th>
+    <th>Hire Date</th>
+
+    <th>Job Post</th>
+    <th>Department Name</th>
+
+    <th>Action</th>
+    </thead>
+
+    {% for e in employees %}
+    <tr>
+        <td>{{ e.name }}</td>
+                <td>{{ e.email }}</td>
+        <td>{{ e.address }}</td>
+        <td>{{ e.contact_no }}</td>
+                <td>{{ e.is_active }}</td>
+<!--        <img src="{{MEDIA_URL}}{{e.image.url}}" style="width:100px;height:auto;">-->
+        <td>{{ e.hire_date }}</td>
+        <td>{{ e.salary }}</td>
+        <td>{{ e.department }}</td>
+
+        <td>
+      <a href="{% url 'editemployee' e.id %}" class="btn btn-success">Update</a>
+                   <a href="{% url 'deleteemployee' e.id %}" class="btn btn-danger">Delete</a>
+    </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+
+
+

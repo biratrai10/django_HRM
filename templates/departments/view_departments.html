@@ -1,0 +1,47 @@
+
+{% extends 'master/master.html' %}
+
+ {% block 'sidebar' %}
+  {% include 'component/sidebar.html' %}
+ {% endblock %}
+
+ {% block 'nav' %}
+  {% include 'component/nav.html' %}
+ {% endblock %}
+
+ {% block 'footer' %}
+{% include 'component/footer.html' %}
+ {% endblock %}
+
+{% block 'body' %}
+<h1>View Departments</h1>
+
+<table border="1px">
+    <thead>
+    <th>Title</th>
+        <th>Email</th>
+    <th>address</th>
+    <th>Description</th>
+    <th>Contact No</th>
+
+    <th>Action</th>
+    </thead>
+    {% for d in department %}
+    <tr>
+        <td>{{ d.title }}</td>
+                <td>{{ d.demail }}</td>
+        <td>{{ d.daddress }}</td>
+        <td>{{ d.description }}</td>
+        <td>{{ d.dcontact }}</td>
+
+        <td>
+      <a href="{% url 'editdepartments' d.id %}" class="btn btn-success">Update</a>
+                   <a href="{% url 'deletedepartments' d.id %}" class="btn btn-danger">Delete</a>
+    </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+
+
+
